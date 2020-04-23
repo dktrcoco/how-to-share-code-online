@@ -1,0 +1,39 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+//int count_letters(int length, int array[]);
+
+int main(void)
+{
+    int Letters = 0;
+    int Words = 0;
+   // int Sentences = 0;
+
+    string TextEntered = get_string("Text: ");
+    printf("Number of Letters: ");
+    for (int CharacterPosition = 0, n = strlen(TextEntered); CharacterPosition < n; CharacterPosition++)
+    {
+        if isalpha(TextEntered[CharacterPosition])
+        {
+            Letters++;
+        }
+        else if (isblank(TextEntered[CharacterPosition]) || ispunct(TextEntered[CharacterPosition]))
+        {
+            Words++;
+        }
+       // else if (ispunct(TextEntered[CharacterPosition]))
+      //  {
+      //      Sentences++;
+      //  }
+    }
+
+    printf("%i letter(s)", Letters);
+    printf("\n");
+    printf("%i word(s)", Words);
+    printf("\n");
+  //  printf("%i sentence(s)", Sentences);
+  //  printf("\n");
+}
